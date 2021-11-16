@@ -1,0 +1,345 @@
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./styles/index.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************/
+.preloader, .navigation {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.dg.ac {
+  z-index: 99999 !important;
+}
+
+body {
+  font-family: "Suisse BP";
+  position: fixed;
+}
+
+@font-face {
+  font-family: "George X";
+  src: url(222ef9cd7283d2118a65.woff2) format("woff2"), url(c4a7e8b052745319288b.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Suisse BP";
+  src: url(e637f47c4e3a678e88f0.woff2) format("woff2"), url(9542373a74d17ade792c.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Suisse BP";
+  src: url(5c5ddb76c5be697700d8.woff2) format("woff2"), url(2ffc7e02da15b0f646fb.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Suisse BP";
+  src: url(a1f7c8d39ba1e6f301b8.woff2) format("woff2"), url(650198296fa05b8b32df.woff) format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  user-select: none;
+  outline: none;
+  -webkit-touch-callout: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+html {
+  background: #000;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 0.5208333333vw;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  position: fixed;
+  -moz-osx-font-smoothing: grayscale;
+  top: 0;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 2.6666666667vw;
+  }
+}
+
+body {
+  font: 1.4rem/1.5 "Suisse BP";
+  height: 100%;
+  left: 0;
+  opacity: 1;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+:focus {
+  outline: none;
+}
+
+::-moz-focus-inner {
+  border: 0;
+}
+
+a {
+  color: inherit;
+  outline: none;
+  pointer-events: auto;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  border-radius: none;
+  color: inherit;
+  font: inherit;
+  outline: none;
+  pointer-events: auto;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+input,
+textarea {
+  appearance: none;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  pointer-events: auto;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+.content {
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+[data-animation=paragraph] span {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.about, .home {
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transition: opacity 1s ease, visibility 1s ease;
+  visibility: hidden;
+  width: 100%;
+  z-index: 2;
+}
+
+.about--active, .home--active {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.about__content, .home__content {
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  will-change: transform;
+}
+
+canvas {
+  display: block;
+  height: 100vh;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+noscript {
+  align-items: center;
+  background: #000;
+  color: #fff;
+  cursor: default;
+  display: flex;
+  font-size: 1.6rem;
+  line-height: 1.1;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  padding: 4rem;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+.navigation {
+  pointer-events: none;
+  z-index: 3;
+}
+
+.navigation__link {
+  pointer-events: auto;
+}
+
+.preloader {
+  background: #fff;
+  overflow: hidden;
+  position: fixed;
+  transform-origin: 0 0;
+  z-index: 4;
+}
+.preloader--loaded {
+  transform: scaleY(0);
+}
+
+.home {
+  font-size: 100rem;
+  word-break: break-all;
+}
+.about {
+  font-size: 100rem;
+  word-break: break-all;
+}
