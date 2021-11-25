@@ -1,33 +1,16 @@
-require('dotenv').config()
+require("dotenv").config()
 
-const express = require('express')
+const express = require("express")
 const app = express()
-const path = require('path')
+const path = require("path")
 const port = 3000
 
-const Prismic = require('@prismicio/client')
-const PrismicDOM = require('prismic-dom')
+const Prismic = require("@prismicio/client")
+const PrismicDOM = require("prismic-dom")
 const PRISMIC_ENDPOINT = process.env.PRISMIC_ENDPOINT
 
-const handleLinkResolver = (doc) => {
-  // Define the url depending on the document type
-  // if (doc.type === 'page') {
-  //   return '/page/' + doc.uid;
-  // } else if (doc.type === 'blog_post') {
-  //   return '/blog/' + doc.uid;
-  // }
-
-  // Default to homepage
-  return '/'
-}
-
-// Middleware to inject prismic context
 app.use((_req, res, next) => {
-  res.locals.ctx = {
-    endpoint: PRISMIC_ENDPOINT,
-    linkResolver: handleLinkResolver
-  }
-  // add PrismicDOM in locals to access them in templates.
+  // res.locals.Link = handleLinkResolver
   res.locals.PrismicDOM = PrismicDOM
   next()
 })
@@ -38,29 +21,76 @@ const initApi = (req) =>
     req
   })
 
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'pug')
+app.set("views", path.join(__dirname, "views"))
+app.set("view engine", "pug")
 
-// About Route
-app.get('/about', async (req, res) =>
-  initApi(req).then((api) =>
-    api
-      .query(Prismic.Predicates.any('document.type', ['metadata', 'about']))
-      .then((response) => {
-        const { results } = response
-        const [about, metadata] = results
-
-        res.render('pages/about', {
-          about,
-          metadata
-        })
-      })
+app.get("/", async (req, res) => {
+  const api = await initApi(req)
+  const home = await api.getSingle("home")
+  const metadata = await api.getSingle("metadata")
+  const preloader = await api.getSingle("preloader")
+  const { results: collections } = await api.query(
+    Prismic.Predicates.at("document.type", "collection"),
+    {
+      fetchLinks: ["product.title", , "product.slug", "product.product_image"]
+    }
   )
-)
 
-app.get('/', (_req, res) => res.render('pages/home'))
-app.get('/jewel/:uid', (_req, res) => res.render('pages/jewel'))
-app.get('/collection', (_req, res) => res.render('pages/collection'))
+  res.render("pages/home", {
+    home,
+    metadata,
+    preloader,
+    collections
+  })
+})
+
+app.get("/about", async (req, res) => {
+  const api = await initApi(req)
+  const about = await api.getSingle("about")
+  const metadata = await api.getSingle("metadata")
+  const preloader = await api.getSingle("preloader")
+
+  res.render("pages/about", {
+    about,
+    metadata,
+    preloader
+  })
+})
+
+app.get("/collections", async (req, res) => {
+  const api = await initApi(req)
+  const metadata = await api.getSingle("metadata")
+  const home = await api.getSingle("home")
+  const preloader = await api.getSingle("preloader")
+  const { results: collections } = await api.query(
+    Prismic.Predicates.at("document.type", "collection"),
+    {
+      fetchLinks: ["product.title", , "product.slug", "product.product_image"]
+    }
+  )
+
+  res.render("pages/collections", {
+    collections,
+    home,
+    metadata,
+    preloader
+  })
+})
+
+app.get("/jewel/:uid", async (req, res) => {
+  const api = await initApi(req)
+  const metadata = await api.getSingle("metadata")
+  const preloader = await api.getSingle("preloader")
+  const product = await api.getByUID("product", req.params.uid, {
+    fetchLinks: "collection.title"
+  })
+
+  res.render("pages/jewel", {
+    metadata,
+    product,
+    preloader
+  })
+})
 
 app.listen(port, () =>
   console.log(`

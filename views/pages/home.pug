@@ -4,4 +4,17 @@ block variables
   - var template = 'home'
 
 block content
-  h1.home__title Home
+  main.home
+    .home__wrapper
+      section.home__gallery
+        .home__gallery__wrapper
+          each media in home.data.gallery
+            figure.home__gallery__item
+              img.home__gallery__image(src=media.image.url alt=media.image.alt)
+      
+      each collection, index in collections
+        .collection__bg-titles
+          span.collection__bg-titles__order=`Collection ${index == 0 ? "One" : index == 1 ? "Two" : index == 2 ? "Three" : "Four"}`
+          p.collection__bg-titles__title=collection.data.title
+
+      a.cta.home__cta(href="/collections")=home.data.button

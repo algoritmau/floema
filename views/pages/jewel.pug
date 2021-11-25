@@ -4,4 +4,26 @@ block variables
   - var template = 'jewel'
 
 block content
-  h1.jewel__title Jewel
+  main.jewel
+    .jewel__wrapper
+      figure.jewel__media
+        img.jewel__media__image(src=product.data.product_image.url alt=product.data.product_image.alt)
+        img.jewel__media__image--back(src=product.data.model_image.url alt=product.data.model_image.alt)
+
+      .jewel__details
+        span.jewel__details__collection=product.data.collection.data.title
+        h1.jewel__details__title=product.data.title
+
+        ul.jewel__features
+          each feature in product.data.feature
+            li.jewel__feature
+              svg.jewel__feature__icon
+                use(xlink:href=`sprite-${feature.feature_icon.toLowerCase()}`)
+              p.jewel__feature__description=feature.feature_description
+          each altFeature in product.data.feature_alt
+            li.jewel__feature.jewel__feature--alt
+              span.jewel__feature__label=altFeature.feature_alt_label
+              p.jewel__feature__description=altFeature.feature_alt_description
+        
+        a.cta.cta--primary.jewel__cta(href="/cart")=product.data.cta_text
+        
