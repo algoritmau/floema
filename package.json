@@ -2,7 +2,7 @@
   "name": "floema",
   "description": "Repository of the Floema's website",
   "version": "1.0.0",
-  "author": "Mauricio Paternina<hello@spaceinva.dev>",
+  "author": "Mauricio Paternina<hello@patternina.work>",
   "scripts": {
     "backend:build": "node app.js",
     "backend:development": "nodemon app.js",
@@ -13,7 +13,6 @@
   "dependencies": {
     "@prismicio/client": "^5.1.0",
     "express": "^4.17.1",
-    "include-media": "^1.4.10",
     "nodemon": "^2.0.13",
     "prismic-dom": "^2.2.6",
     "pug": "^3.0.2"
@@ -38,6 +37,7 @@
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^10.0.0",
+    "include-media": "^1.4.10",
     "mini-css-extract-plugin": "^2.4.2",
     "postcss-loader": "^6.1.1",
     "sass": "^1.42.1",

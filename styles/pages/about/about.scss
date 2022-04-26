@@ -1,21 +1,42 @@
 .about {
-
-}
-
-.about__content {
-
-}
-.about {
-  @extend %page;
-
-  font-size: 100rem;
-  word-break: break-all;
-
-  &--active {
-    @extend %page--active;
+  &__wrapper {
   }
-}
 
-.about__content {
-  @extend %content;
+  &__gallery {
+    &__wrapper {
+    }
+    &__item {
+    }
+    &__image {
+    }
+  }
+
+  &__title {
+  }
+
+  &__content {
+    &__wrapper {
+    }
+    &__label {
+    }
+    &__description {
+    }
+    &__media {
+    }
+    &__media__image {
+    }
+  }
+
+  &__highlight {
+    &__wrapper {
+    }
+    &__label {
+    }
+    &__title {
+    }
+    &__media {
+    }
+    &__media__image {
+    }
+  }
 }

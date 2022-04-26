@@ -32,14 +32,14 @@
   display: inline-block;
   line-height: 1.05;
 
-  &:after {
+  &::after {
     @extend %link__line;
     @extend %link__line--visible;
   }
 
   &:hover,
   &:focus {
-    &:after {
+    &::after {
       @extend %link__line--hidden;
     }
   }
@@ -51,14 +51,14 @@
   display: inline-block;
   line-height: 1.05;
 
-  &:after {
+  &::after {
     @extend %link__line;
     @extend %link__line--hidden;
   }
 
   &:hover,
   &:focus {
-    &:after {
+    &::after {
       @extend %link__line--visible;
     }
   }

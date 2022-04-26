@@ -5,12 +5,30 @@ const app = express()
 const path = require("path")
 const port = 3000
 
+app.use(express.static(path.join(__dirname, "public")))
+
 const Prismic = require("@prismicio/client")
 const PrismicDOM = require("prismic-dom")
 const PRISMIC_ENDPOINT = process.env.PRISMIC_ENDPOINT
 
+const handleLinkResolver = (doc) => {
+  switch (doc.type) {
+    case "jewel":
+      return `/jewel/${doc.slug}`
+
+    case "collections":
+      return "/collections"
+
+    case "about":
+      return "/about"
+
+    default:
+      return "/"
+  }
+}
+
 app.use((_req, res, next) => {
-  // res.locals.Link = handleLinkResolver
+  res.locals.Link = handleLinkResolver
   res.locals.PrismicDOM = PrismicDOM
   next()
 })

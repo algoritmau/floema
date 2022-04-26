@@ -1,11 +1,32 @@
 .preloader {
   @extend %cover;
+  @include flex-centered;
+  display: none;
 
-  background: $color-white;
+  background: var(--color-accent-contessa);
+  color: var(--color-white);
+  position: relative;
   overflow: hidden;
   position: fixed;
   transform-origin: 0 0;
-  z-index: z('preloader');
+  z-index: z("preloader");
+
+  &__text {
+    @extend %heading;
+    @extend %heading-53;
+    max-width: 72rem;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 112%;
+  }
+
+  &__progress {
+    position: absolute;
+    left: 50%;
+    bottom: 2.4rem;
+    transform: translateX(-50%);
+    @extend %description-14;
+  }
 
   &--loaded {
     transform: scaleY(0);

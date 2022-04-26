@@ -1,4 +1,5 @@
 body {
-  font-family: $font-suisse-bp;
+  font-family: var(--font-body);
+  @extend %description-16;
   position: fixed;
 }

@@ -1,0 +1,20 @@
+$color-black: #080808;
+$color-white: #fefefe;
+
+$font-headings: "George X";
+$font-body: "Suisse BP";
+
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
+$z-indexes: ("noscript", "preloader", "navigation", "content", "canvas");
+
+:root {
+  --color-black: #080808;
+  --color-white: #fefefe;
+  --color-accent-contessa: #c97164;
+
+  --font-headings: "George X";
+  --font-body: "Suisse BP";
+
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+}

@@ -1,21 +1,26 @@
-@import './utils/variables';
-@import './utils/functions';
-@import './utils/responsive';
-@import './utils/mixins';
-@import './utils/vendors';
+@import "./base/fonts";
 
-@import './base/base';
-@import './base/fonts';
-@import './base/reset';
+@import "./abstracts/functions";
+@import "./abstracts/mixins";
+@import "./abstracts/responsive";
+@import "./abstracts/variables";
+@import "./abstracts/vendors";
 
-@import './shared/links';
-@import './shared/sections';
+@import "./base/base";
+@import "./base/reset";
 
-@import './components/canvas';
-@import './components/functionals';
-@import './components/navigation';
-@import './components/preloader';
+@import "./shared/descriptions";
+@import "./shared/headings";
+@import "./shared/links";
+@import "./shared/sections";
 
-@import './pages/home/home';
+@import "./components/canvas";
+@import "./components/cta";
+@import "./components/functionals";
+@import "./components/navigation";
+@import "./components/preloader";
 
-@import './pages/about/about';
+@import "./pages/about/about";
+@import "./pages/collections/collections";
+@import "./pages/home/home";
+@import "./pages/jewel/jewel";

@@ -1,14 +1,13 @@
 .home {
-  @extend %page;
-
-  font-size: 100rem;
-  word-break: break-all;
-
-  &--active {
-    @extend %page--active;
+  &__wrapper {
   }
-}
 
-.home__content {
-  @extend %content;
+  &__gallery {
+    &__wrapper {
+    }
+    &__item {
+    }
+    &__image {
+    }
+  }
 }
