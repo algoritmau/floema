@@ -144,6 +144,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
+  background-color: var(--color-accent-quicksand);
 }
 
 :focus {
@@ -193,11 +194,16 @@ ul {
 
 .content {
   height: 100%;
-  left: 0;
-  overflow: auto;
-  position: absolute;
-  top: 0;
   width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: auto;
+}
+
+[data-template="collections"] {
+  height: 100vh;
+  overflow: hidden;
 }
 
 [data-animation="paragraph"] {

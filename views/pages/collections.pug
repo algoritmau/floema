@@ -4,23 +4,26 @@ block variables
   - var template = 'collections'
 
 block content
-   main.collections
+   section.collections
     .collections__wrapper
-      each collection, index in collections
-        .collection__bg-titles
-          span.collection__bg-titles__order=`Collection ${index == 0 ? "One" : index == 1 ? "Two" : index == 2 ? "Three" : "Four"}`
-          p.collection__bg-titles__title=collection.data.title
+      .collections__titles
+        each collection, index in collections
+          .collections__titles__item
+            span.collections__titles__item__label=`Collection ${index == 0 ? "One" : index == 1 ? "Two" : index == 2 ? "Three" : "Four"}`
+            p.collections__titles__item__text=collection.data.title
 
-      each collection in collections
-        .collection__info
-          h2.collection__title=`${collection.data.title} Collection`
-          p.collection__description=collection.data.description
+      .collections__gallery  
+        each collection in collections
+          .collection__gallery
+            each product in collection.data.products
+                .collection__gallery__item    
+                    a.collection__gallery__item__link(href=`/jewel/${product.product.slug}`)
+                      figure.collection__gallery__item__image-wrapper
+                        img.collection__gallery__item__image(src=product.product.data.product_image.url alt=product.product.data.product_image.alt)
+      
+      .collection__info
+        each collection, index in collections
+          .collection__info__item(class=`${index == 0 ? "collection__info__item--active" : ""}`)
+            h2.collection__info__item__title=`${collection.data.title} Collection`
+            p.collection__info__item__description=collection.data.description
         
-        
-      each collection in collections
-        each product in collection.data.products
-          .collections__gallery 
-            .collections__gallery__wrapper     
-                a.collection__product(href=`/jewel/${product.product.slug}`)
-                  figure.collection__product__image
-                    img.collection__product__image__image(src=product.product.data.product_image.url alt=product.product.data.product_image.alt)
