@@ -1,8 +1,9 @@
 .navigation {
   @extend %cover;
+  display: none; // TODO: Remove
 
   pointer-events: none;
-  z-index: z('navigation');
+  z-index: z("navigation");
 }
 
 .navigation__link {

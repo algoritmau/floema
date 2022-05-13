@@ -1,10 +1,10 @@
 %cover {
   height: 100%;
-  left: 0;
-  object-fit: cover;
+  width: 100%;
   position: absolute;
   top: 0;
-  width: 100%;
+  left: 0;
+  object-fit: cover;
 }
 
 @mixin flex-centered {

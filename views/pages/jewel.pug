@@ -4,14 +4,16 @@ block variables
   - var template = 'jewel'
 
 block content
-  main.jewel
+  section.jewel
     .jewel__wrapper
       figure.jewel__media
         img.jewel__media__image(src=product.data.product_image.url alt=product.data.product_image.alt)
         img.jewel__media__image--back(src=product.data.model_image.url alt=product.data.model_image.alt)
 
       .jewel__details
-        span.jewel__details__collection=product.data.collection.data.title
+        p.jewel__details__collection
+          span.jewel__details__collection__name=`${product.data.collection.data.title} `
+          span="collection"
         h1.jewel__details__title=product.data.title
 
         ul.jewel__features

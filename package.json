@@ -2,7 +2,7 @@
   "name": "floema",
   "description": "Repository of the Floema's website",
   "version": "1.0.0",
-  "author": "Mauricio Paternina<hello@patternina.work>",
+  "author": "Mauricio Paternina<hi@patternina.co>",
   "scripts": {
     "backend:build": "node app.js",
     "backend:development": "nodemon app.js",

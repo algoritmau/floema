@@ -1,34 +1,93 @@
 .jewel {
+  @extend %cover;
+  @include flex-centered;
+  padding: 8rem 4rem;
+  height: auto;
+  background-color: var(--color-accent-quicksand);
+  color: var(--color-white);
+  position: static;
+
   &__wrapper {
+    background-color: var(--color-accent-quicksand);
+    @include flex-centered;
+    align-items: flex-start;
+    gap: 2.4rem;
+    height: 100%;
+    max-width: 120rem;
   }
 
   &__media {
+    height: 100%;
+    max-height: 78.2rem;
+    width: 48%;
+    position: relative;
+    @include flex-centered;
+    align-items: stretch;
+
     &__image {
+      object-fit: cover;
     }
 
     &__image--back {
+      display: none;
     }
   }
 
   &__details {
+    width: 52%;
+    padding: 2.4rem 0.8rem 0 0.8rem;
+
     &__collection {
+      display: block;
+      @extend %description-12;
+      margin-block-end: 3.2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      &__name {
+        font-weight: normal;
+      }
     }
 
     &__title {
+      @extend %heading-120;
+      font-family: var(--font-headings);
+      margin-block-end: 4.8rem;
     }
   }
 
   &__features {
+    padding-inline-start: 4rem;
   }
 
   &__feature {
+    display: grid;
+    grid-template-columns: 4.8rem 1fr;
+    align-items: center;
+    gap: 1.6rem;
+    margin-block-end: 3.2rem;
+
     &__icon {
+      width: 4.4rem;
+      height: 4.4rem;
+      border: 1px solid var(--color-white);
+      border-radius: 50%;
     }
 
     &__description {
+      width: 80%;
     }
 
     &--alt {
+      grid-template-columns: 7rem 1fr;
+      align-items: start;
+
+      & > span {
+        display: block;
+        @extend %description-12;
+        line-height: 112%;
+        margin-block-start: 0.7rem;
+      }
     }
 
     &__label {
@@ -39,5 +98,9 @@
   }
 
   &__cta {
+    padding-inline-start: 4rem;
+    font-family: var(--font-headings);
+    background-color: transparent;
+    font-size: 2rem;
   }
 }
